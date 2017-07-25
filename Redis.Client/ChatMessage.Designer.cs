@@ -42,7 +42,7 @@
             this.lblNickname.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lblNickname.Location = new System.Drawing.Point(52, 2);
             this.lblNickname.Name = "lblNickname";
-            this.lblNickname.Size = new System.Drawing.Size(257, 23);
+            this.lblNickname.Size = new System.Drawing.Size(255, 23);
             this.lblNickname.TabIndex = 0;
             this.lblNickname.Text = "NICKNAME";
             // 
@@ -52,18 +52,22 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMessage.AutoUpdateHeight = true;
+            this.lblMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lblMessage.Location = new System.Drawing.Point(53, 25);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(256, 13);
+            this.lblMessage.Size = new System.Drawing.Size(254, 13);
             this.lblMessage.TabIndex = 2;
             this.lblMessage.Text = "MESSAGE";
             // 
             // picAvatar
             // 
+            this.picAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picAvatar.Image = global::Redis.Client.Properties.Resources.UserProfile_62x;
             this.picAvatar.Location = new System.Drawing.Point(0, 0);
             this.picAvatar.Name = "picAvatar";
             this.picAvatar.Size = new System.Drawing.Size(48, 48);
+            this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAvatar.TabIndex = 1;
             this.picAvatar.TabStop = false;
             // 
@@ -71,13 +75,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.picAvatar);
             this.Controls.Add(this.lblNickname);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MinimumSize = new System.Drawing.Size(312, 48);
             this.Name = "ChatMessage";
-            this.Size = new System.Drawing.Size(312, 48);
+            this.Size = new System.Drawing.Size(310, 51);
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             this.ResumeLayout(false);
 

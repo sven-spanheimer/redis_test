@@ -37,17 +37,11 @@
     <Reference Include="DarkUI">
       <HintPath>..\DarkUI\DarkUI\bin\Debug\DarkUI.dll</HintPath>
     </Reference>
-    <Reference Include="protobuf-net, Version=2.3.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
-      <HintPath>..\packages\protobuf-net.2.3.0\lib\net40\protobuf-net.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="StackExchange.Redis, Version=1.2.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\StackExchange.Redis.1.2.5\lib\net45\StackExchange.Redis.dll</HintPath>
-    </Reference>
-    <Reference Include="StackExchange.Redis.Extensions.Core, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\StackExchange.Redis.Extensions.Core.2.2.0\lib\net45\StackExchange.Redis.Extensions.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="StackExchange.Redis.Extensions.Protobuf, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\StackExchange.Redis.Extensions.Protobuf.2.2.0\lib\net45\StackExchange.Redis.Extensions.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -74,6 +68,7 @@
     <Compile Include="ChatMessage.Designer.cs">
       <DependentUpon>ChatMessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\ChatMessage.cs" />
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +119,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\redis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserProfile_62x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

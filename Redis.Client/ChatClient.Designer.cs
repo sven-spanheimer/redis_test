@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChatClient));
             this.lblHeader = new DarkUI.Controls.DarkLabel();
             this.darkLabel1 = new DarkUI.Controls.DarkLabel();
             this.txtNickname = new DarkUI.Controls.DarkTextBox();
@@ -38,8 +39,8 @@
             this.darkLabel2 = new DarkUI.Controls.DarkLabel();
             this.txtChannelName = new DarkUI.Controls.DarkTextBox();
             this.chatWindow = new DarkUI.Controls.DarkSectionPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ChatMessageContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.settingsSelectionPanel.SuspendLayout();
             this.chatWindow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -111,7 +112,7 @@
             this.settingsSelectionPanel.Controls.Add(this.txtNickname);
             this.settingsSelectionPanel.Location = new System.Drawing.Point(21, 53);
             this.settingsSelectionPanel.Name = "settingsSelectionPanel";
-            this.settingsSelectionPanel.SectionHeader = null;
+            this.settingsSelectionPanel.SectionHeader = "Verbindungseinstellungen";
             this.settingsSelectionPanel.Size = new System.Drawing.Size(473, 103);
             this.settingsSelectionPanel.TabIndex = 12;
             // 
@@ -155,20 +156,9 @@
             this.chatWindow.Controls.Add(this.ChatMessageContainer);
             this.chatWindow.Location = new System.Drawing.Point(21, 169);
             this.chatWindow.Name = "chatWindow";
-            this.chatWindow.SectionHeader = null;
+            this.chatWindow.SectionHeader = "Chat";
             this.chatWindow.Size = new System.Drawing.Size(651, 233);
             this.chatWindow.TabIndex = 13;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::Redis.Client.Properties.Resources.redis;
-            this.pictureBox1.Location = new System.Drawing.Point(500, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(172, 144);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
             // 
             // ChatMessageContainer
             // 
@@ -183,6 +173,17 @@
             this.ChatMessageContainer.TabIndex = 0;
             this.ChatMessageContainer.WrapContents = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Redis.Client.Properties.Resources.redis;
+            this.pictureBox1.Location = new System.Drawing.Point(500, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(172, 144);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // ChatClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -196,9 +197,11 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblHeader);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(700, 500);
             this.Name = "ChatClient";
-            this.Text = "ChatClient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Redis Chat-Client";
             this.settingsSelectionPanel.ResumeLayout(false);
             this.settingsSelectionPanel.PerformLayout();
             this.chatWindow.ResumeLayout(false);
