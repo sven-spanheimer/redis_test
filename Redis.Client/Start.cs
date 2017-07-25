@@ -6,22 +6,28 @@ using System.Windows.Forms;
 
 namespace Redis.Client
 {
-    public partial class Form1 : Form
+    public partial class Start : Form
     {
 
-        public ConnectionMultiplexer redis;
+        public static ConnectionMultiplexer redis;
 
 
-        public Form1()
+        public Start()
         {
             InitializeComponent();
+
+
             btnDisconnect.Enabled = false;
+            btnServerStatus.Enabled = false;
+            btnTestTool.Enabled = false;
         }
 
         private void btnStartConnection_Click(object sender, EventArgs e)
         {
             btnStartConnection.Enabled = false;
             btnDisconnect.Enabled = false;
+            btnServerStatus.Enabled = false;
+            btnTestTool.Enabled = false;
 
             BackgroundWorker asyncConnect = new BackgroundWorker();
             asyncConnect.DoWork += AsyncConnect_DoWork;
@@ -38,12 +44,19 @@ namespace Redis.Client
                 //Verbindung aufgebaut
                 btnStartConnection.Enabled = false;
                 btnDisconnect.Enabled = true;
+                btnServerStatus.Enabled = true;
+                btnTestTool.Enabled = true;
+
+                //DarkMessageBox.ShowInformation("Verbindung wurde erfolgreich hergestellt.", Text, DarkDialogButton.Ok);
+                btnServerStatus.Focus();
             }
             else
             {
                 //Verbindung nicht aufgebaut
                 btnStartConnection.Enabled = true;
                 btnDisconnect.Enabled = false;
+                btnServerStatus.Enabled = false;
+                btnTestTool.Enabled = false;
             }
 
         }
@@ -52,7 +65,7 @@ namespace Redis.Client
         {
             try
             {
-                redis = ConnectionMultiplexer.Connect("localhost");
+                redis = ConnectionMultiplexer.Connect(txtConnectionEndpoint.Text);
             }
             catch (Exception ex)
             {
@@ -68,6 +81,10 @@ namespace Redis.Client
                 redis.Close();
                 btnStartConnection.Enabled = true;
                 btnDisconnect.Enabled = false;
+                btnServerStatus.Enabled = false;
+                btnTestTool.Enabled = false;
+
+                btnStartConnection.Focus();
             }
             catch (Exception ex)
             {
@@ -78,6 +95,23 @@ namespace Redis.Client
         private void btnEnd_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void btnServerStatus_Click(object sender, EventArgs e)
+        {
+            DarkMessageBox.ShowInformation(redis.GetStatus(), Text, DarkDialogButton.Ok);
+        }
+
+        private void btnTestTool_Click(object sender, EventArgs e)
+        {
+            TestTool testTool = new TestTool();
+            testTool.Show();
+        }
+
+        private void btnOpenChat_Click(object sender, EventArgs e)
+        {
+            ChatClient chatClient = new ChatClient();
+            chatClient.Show();
         }
     }
 }
