@@ -34,12 +34,12 @@
             this.btnDisconnect = new DarkUI.Controls.DarkButton();
             this.btnServerStatus = new DarkUI.Controls.DarkButton();
             this.btnTestTool = new DarkUI.Controls.DarkButton();
+            this.btnOpenChat = new DarkUI.Controls.DarkButton();
             this.btnEnd = new DarkUI.Controls.DarkButton();
             this.darkLabel3 = new DarkUI.Controls.DarkLabel();
             this.txtConnectionEndpoint = new DarkUI.Controls.DarkTextBox();
             this.darkLabel1 = new DarkUI.Controls.DarkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnOpenChat = new DarkUI.Controls.DarkButton();
             this.CommandContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -114,6 +114,16 @@
             this.btnTestTool.Text = "Test-Tool öffnen";
             this.btnTestTool.Click += new System.EventHandler(this.btnTestTool_Click);
             // 
+            // btnOpenChat
+            // 
+            this.btnOpenChat.Location = new System.Drawing.Point(3, 147);
+            this.btnOpenChat.Name = "btnOpenChat";
+            this.btnOpenChat.Padding = new System.Windows.Forms.Padding(5);
+            this.btnOpenChat.Size = new System.Drawing.Size(228, 30);
+            this.btnOpenChat.TabIndex = 5;
+            this.btnOpenChat.Text = "Chat öffnen";
+            this.btnOpenChat.Click += new System.EventHandler(this.btnOpenChat_Click);
+            // 
             // btnEnd
             // 
             this.btnEnd.Location = new System.Drawing.Point(3, 183);
@@ -146,7 +156,7 @@
             this.txtConnectionEndpoint.Name = "txtConnectionEndpoint";
             this.txtConnectionEndpoint.Size = new System.Drawing.Size(139, 23);
             this.txtConnectionEndpoint.TabIndex = 8;
-            this.txtConnectionEndpoint.Text = "192.168.234.136:6379";
+            this.txtConnectionEndpoint.Text = "192.168.234.136,192.168.234.138";
             // 
             // darkLabel1
             // 
@@ -168,16 +178,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnOpenChat
-            // 
-            this.btnOpenChat.Location = new System.Drawing.Point(3, 147);
-            this.btnOpenChat.Name = "btnOpenChat";
-            this.btnOpenChat.Padding = new System.Windows.Forms.Padding(5);
-            this.btnOpenChat.Size = new System.Drawing.Size(228, 30);
-            this.btnOpenChat.TabIndex = 5;
-            this.btnOpenChat.Text = "Chat öffnen";
-            this.btnOpenChat.Click += new System.EventHandler(this.btnOpenChat_Click);
             // 
             // Start
             // 

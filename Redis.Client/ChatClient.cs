@@ -95,6 +95,8 @@ namespace Redis.Client
 
         private void SendChatMessage(string message)
         {
+            if (btnConnectToChat.Enabled != false) { DarkUI.Forms.DarkMessageBox.ShowWarning("Sie sind in keinem Channel!", "Meldung"); }
+
             Classes.ChatMessage chatMessage = new Classes.ChatMessage(message, txtNickname.Text);
             Start.redis.GetSubscriber().Publish("chat_" + txtChannelName.Text, JsonConvert.SerializeObject(chatMessage));
         }

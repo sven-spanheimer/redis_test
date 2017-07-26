@@ -1,6 +1,7 @@
 ﻿using DarkUI.Forms;
 using StackExchange.Redis;
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Redis.Client
@@ -46,5 +47,18 @@ namespace Redis.Client
             Start.redis.GetSubscriber().Publish("chat", "test");
         }
 
+        private void btnTestLoad_Click(object sender, EventArgs e)
+        {
+            Stopwatch time = new Stopwatch();
+            time.Start();
+
+            for (int i = 1; i < 10000; i++)
+            {
+                Start.redis.GetDatabase().Ping();
+            }
+
+            time.Stop();
+            DarkMessageBox.ShowInformation(time.ElapsedMilliseconds.ToString() + "ms", "Result");
+        }
     }
 }

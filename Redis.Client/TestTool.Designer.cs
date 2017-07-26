@@ -33,6 +33,7 @@
             this.btnPing = new DarkUI.Controls.DarkButton();
             this.btnTestExpire = new DarkUI.Controls.DarkButton();
             this.btnSendChat = new DarkUI.Controls.DarkButton();
+            this.btnTestLoad = new DarkUI.Controls.DarkButton();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -85,12 +86,23 @@
             this.btnSendChat.Text = "Send Chat";
             this.btnSendChat.Click += new System.EventHandler(this.btnSendChat_Click);
             // 
+            // btnTestLoad
+            // 
+            this.btnTestLoad.Location = new System.Drawing.Point(23, 198);
+            this.btnTestLoad.Name = "btnTestLoad";
+            this.btnTestLoad.Padding = new System.Windows.Forms.Padding(5);
+            this.btnTestLoad.Size = new System.Drawing.Size(228, 30);
+            this.btnTestLoad.TabIndex = 10;
+            this.btnTestLoad.Text = "Send 10000 PINGs";
+            this.btnTestLoad.Click += new System.EventHandler(this.btnTestLoad_Click);
+            // 
             // TestTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ClientSize = new System.Drawing.Size(712, 350);
+            this.Controls.Add(this.btnTestLoad);
             this.Controls.Add(this.btnSendChat);
             this.Controls.Add(this.btnTestExpire);
             this.Controls.Add(this.btnPing);
@@ -111,5 +123,6 @@
         private DarkUI.Controls.DarkButton btnPing;
         private DarkUI.Controls.DarkButton btnTestExpire;
         private DarkUI.Controls.DarkButton btnSendChat;
+        private DarkUI.Controls.DarkButton btnTestLoad;
     }
 }
